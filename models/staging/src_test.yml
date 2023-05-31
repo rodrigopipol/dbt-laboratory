@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: test
+    description: Fuente de Laboratory del proyecto
+    database: apt-advantage-312018
+    schema: laboratory
+    tables:
+      - name: test_table
+        description: Tabla vieja de ejemplo
+        columns:
+          - name: parametro
+            description: Campo parametro en la tabla Test
+            tests:
+              - unique
+              - not_null
