@@ -1,12 +1,34 @@
 version: 2
 
 sources:
-      - name: src_external_auditsa_cl
+  - name: test
+    description: Fuente de DBT Laboratory del proyecto
+    database: apt-advantage-312018
+    schema: dbt_laboratory
+    tables:
+      - name: src_external_test
         description: Tabla externa creada en DBT
         external:
-          location: 'gs://apt-advantage-312018-staging/DW - Inputs/Auditsa/Chile/Santiago/auditsa_cl_santiago_off_tv.csv'
+          location: 'gs://apt-advantage-312018-staging/test-rodri/dbt-test/source/cdmx_pu_test.csv'
           options:
-            formato: csv
-            skipLeadingRows: 1
-            fielDelimiter: ','
-            allowJaggedRows: true
+            format: csv
+            skip_leading_rows: 1
+            field_delimiter: ';'
+            allow_jagged_rows: true
+        columns:
+          - name: canal
+            data_type: string
+            description: 'Campo Canal'
+          - name: grupo_estacion
+            data_type: string
+            description: 'Campo Grupo Estacion'
+          - name: fecha
+            data_type: string
+            description: 'Campo Fecha'
+          - name: hora
+            data_type: string
+            description: 'Campo Hora'
+          - name: marca
+            data_type: string
+            description: 'Campo Marca'
+  
