@@ -1,16 +1,12 @@
 version: 2
 
 sources:
-  - name: test
-    description: Fuente de Laboratory del proyecto
-    database: apt-advantage-312018
-    schema: laboratory
-    tables:
-      - name: test_table
-        description: Tabla vieja de ejemplo
-        columns:
-          - name: parametro
-            description: Campo parametro en la tabla Test
-            tests:
-              - unique
-              - not_null
+      - name: src_external_auditsa_cl
+        description: Tabla externa creada en DBT
+        external:
+          location: 'gs://apt-advantage-312018-staging/DW - Inputs/Auditsa/Chile/Santiago/auditsa_cl_santiago_off_tv.csv'
+          options:
+            formato: csv
+            skipLeadingRows: 1
+            fielDelimiter: ','
+            allowJaggedRows: true
