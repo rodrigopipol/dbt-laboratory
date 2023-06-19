@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: src_stitch_ga_cl003
+    description: Fuente en BQ de Stitch para cliente 003
+    database: apt-advantage-312018
+    schema: stitch_ga_cl003
+    tables:
+      - name: ga_adquisition
+        # columns:
+        #   - name: parametro
+        #     description: Campo parametro en la tabla Test
+        #     tests:
+        #       - unique
+        #       - not_null

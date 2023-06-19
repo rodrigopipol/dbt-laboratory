@@ -35,5 +35,9 @@ models:
   test_rodri:
     mart_test:
       +materialized: table
+      +schema: dw
+    ods:
+      +materialized: table
+      +schema: ods
     staging:
       +materialized: view
