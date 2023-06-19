@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: dims
+    description: Dim area
+    database: apt-advantage-312018
+    schema: dbt_dw_pipol
+    tables:
+      - name: lk_camp_campania
+        columns:
+          - name: id_camp_campania
+            tests:
+              - unique
+              - not_null
+          - name: id_cli_cliente
+            tests:
+              - not_null
+      - name: lk_ga_contenido_anuncio
+        columns:
+          - name: id_ga_contenido_anuncio
+            tests:
+              - unique
+              - not_null
+      - name: lk_ga_fuente_medio
+        columns:
+          - name: id_ga_fuente_medio
+            tests:
+              - unique
+              - not_null
+      - name: lk_ga_pagina_destino
+        columns:
+          - name: id_ga_pagina_destino
+            tests:
+              - unique
+              - not_null
+      - name: lk_geo_pais
+        columns:
+          - name: id_geo_pais
+            tests:
+              - unique
+              - not_null

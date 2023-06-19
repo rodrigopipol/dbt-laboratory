@@ -1,0 +1,34 @@
+select
+     id_cli_cliente
+    ,id_tie_fecha_valor
+    ,id_tie_fecha_valor_utc
+    ,desc_tie_fecha_tiempo
+    ,desc_tie_fecha_tiempo_utc
+    ,id_ga_vista
+    ,web_property_id
+    ,profile_id
+    ,account_id
+    ,ga_countryisocode
+    ,ga_sourcemedium
+    ,ga_campaign
+    ,ga_adcontent
+    ,fc_transacciones_cant
+    ,fc_ingreso_producto_monto
+    ,fc_producto_agregado_carrito_cant
+    ,fc_transacciones_monto
+    ,fc_producto_cant
+    ,fc_vista_detalle_producto_cant
+    ,desc_pagina_destino
+    ,desc_ruta_pag_destino
+    ,fc_visualizaciones_pag_cant
+    ,fc_sesiones_cant
+    ,fc_rebotes_cant
+    ,fc_duracion_sesion_seg
+    ,fc_ingresos_monto
+    ,fc_signup_cant
+    ,fc_signup_inicio_cant
+    ,fc_deposito_cant
+    ,fc_deposito_inicio_cant
+    ,fc_login_cant
+    ,fc_login_inicio_cant
+from {{ source('staging', 'vw_ga_adquisition') }}

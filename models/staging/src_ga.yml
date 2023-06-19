@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    description: Staging Area
+    database: apt-advantage-312018
+    schema: dbt_laboratory
+    tables:
+      - name: vw_ga_adquisition
+      - name: vw_ga4_adquisition_agr_fecha
